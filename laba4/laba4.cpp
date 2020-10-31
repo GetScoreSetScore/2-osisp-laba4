@@ -40,20 +40,10 @@ void LoadFile(std::string filename)
 }
 void WriteStrFile(std::string filename)
 {
-    std::ifstream ostr(filename);
-    if (!ostr.good()) {
-        std::cout << "error writing to file" << std::endl;
-    }
-    else
-    {
-        std::ofstream stream(filename);
-        for (std::string str : strings) {
-            char* cstr = str.c_str();
-            strcat(cstr, "\n")
-            stream.write(str.c_str(), strlen(str.c_str()+1));
-        }
-        stream.close();
-    }
+    std::ofstream file(filename);
+
+    for (std::string str : strings)
+        file << str << std::endl;
 }
 void Split(float count)
 {
@@ -97,7 +87,7 @@ void MergeSortedParts()
 }
 int main()
 {
-    LoadFile("D:\\University\\3course\\5semester\\OSiSP\\labs\\laba4\\Debug\\textfile.txt");
+    LoadFile("../Debug/textfile.txt");
     parts.resize(THREADCOUNT);
     Split(THREADCOUNT);
     Threadpool* pool = new Threadpool(THREADCOUNT);
@@ -111,7 +101,7 @@ int main()
     pool->Stop();
     WaitForSingleObject(threadpoolfinish, INFINITE);
     MergeSortedParts();
-    WriteStrFile("D:\\University\\3course\\5semester\\OSiSP\\labs\\laba4\\Debug\\output.txt");
+    WriteStrFile("../Debug/out.txt");
     std::cout << "Main thread " << GetCurrentThreadId() << " stops " << std::endl;
     system("pause");
 
