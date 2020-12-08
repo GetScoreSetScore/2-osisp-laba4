@@ -1,8 +1,0 @@
-﻿  laba4.cpp
-D:\University\3course\5semester\OSiSP\labs\laba4\laba4\laba4.cpp(50,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\University\3course\5semester\OSiSP\labs\laba4\laba4\laba4.cpp(51,22): warning C4018: '<': signed/unsigned mismatch
-D:\University\3course\5semester\OSiSP\labs\laba4\laba4\laba4.cpp(53,19): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
-  Queue.cpp
-  Threadpool.cpp
-  Generating Code...
-  laba4.vcxproj -> D:\University\3course\5semester\OSiSP\labs\laba4\Debug\laba4.exe
